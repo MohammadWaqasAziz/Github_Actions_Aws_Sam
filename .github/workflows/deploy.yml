@@ -86,7 +86,8 @@ jobs:
             --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
             --region ${{ env.AWS_REGION }} \
             --no-fail-on-empty-changeset \
-            --s3-prefix sam-deployments
+            --resolve-s3 \
+            --s3-prefix sam-dev-deployments
 
   deploy-prod:
     name: Deploy to Production
@@ -124,4 +125,5 @@ jobs:
             --capabilities CAPABILITY_IAM CAPABILITY_NAMED_IAM \
             --region ${{ env.AWS_REGION }} \
             --no-fail-on-empty-changeset \
-            --s3-prefix sam-deployments
+            --resolve-s3 \
+            --s3-prefix sam-prod-deployments
